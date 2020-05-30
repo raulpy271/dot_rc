@@ -1,7 +1,6 @@
 " Vim color file
 " colorschema by raulpy271, raulrufino0@gmail.com
-" LineNr: barra numerica
-"Colors that i'll use: Cyean, DarkBlue, Yellow, Red
+
 
 hi clear
 set cursorline
