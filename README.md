@@ -1,1 +1,1 @@
-# myVimColorschemas
+my personal color schemes
