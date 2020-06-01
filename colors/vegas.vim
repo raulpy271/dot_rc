@@ -6,6 +6,7 @@ hi clear
 set cursorline
 set nu
 set laststatus=2
+set hlsearch
 let g:colors_name = "vegas"
 
 
@@ -29,6 +30,7 @@ hi IncSearch    cterm=reverse
 hi NonText      ctermfg=Yellow
 hi SpecialKey   ctermfg=DarkBlue	   
 hi Title        ctermfg=Yellow 
+hi Search ctermfg=Yellow ctermbg=Red
 hi VertSplit    cterm=reverse      ctermfg=Yellow 
 hi Visual       ctermfg=Yellow     ctermbg=Red 
 hi Question     ctermfg=Yellow     ctermbg=Red
