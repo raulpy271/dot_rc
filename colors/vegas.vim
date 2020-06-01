@@ -1,5 +1,5 @@
 " Vim color file
-" colorschema by raulpy271
+" colorscheme by raulpy271
 
 
 hi clear
@@ -23,23 +23,23 @@ hi DiffChange   ctermbg=Red
 hi DiffDelete   ctermbg=Red
 hi DiffText     ctermbg=Red
 hi Directory    cterm=reverse
-hi StatusLine   cterm=reverse     ctermfg=Yellow
-hi StatusLineNC cterm=reverse     ctermfg=Cyan
-hi ErrorMsg     ctermfg=Yellow    ctermbg=Red
-hi WarningMsg   ctermfg=Yellow    ctermbg=Red 
-hi WildMenu     ctermfg=Yellow    ctermbg=Red 
 hi FoldColumn   ctermfg=DarkBlue
 hi Folded       ctermfg=DarkBlue
 hi IncSearch    cterm=reverse
-hi LineNr       cterm=reverse      ctermfg=Cyan
-hi ModeMsg      cterm=bold,reverse ctermfg=Red
-hi MoreMsg      cterm=reverse      ctermfg=Cyan
 hi NonText      ctermfg=Yellow
-hi Question     ctermfg=Yellow     ctermbg=Red
 hi SpecialKey   ctermfg=DarkBlue	   
 hi Title        ctermfg=Yellow 
 hi VertSplit    cterm=reverse      ctermfg=Yellow 
 hi Visual       ctermfg=Yellow     ctermbg=Red 
+hi Question     ctermfg=Yellow     ctermbg=Red
+hi LineNr       cterm=reverse      ctermfg=Cyan
+hi ModeMsg      cterm=bold,reverse ctermfg=Red
+hi MoreMsg      cterm=reverse      ctermfg=Cyan
+hi StatusLine   cterm=reverse      ctermfg=Yellow
+hi StatusLineNC cterm=reverse      ctermfg=Cyan
+hi ErrorMsg     ctermfg=Yellow     ctermbg=Red
+hi WarningMsg   ctermfg=Yellow     ctermbg=Red 
+hi WildMenu     ctermfg=Yellow     ctermbg=Red 
 
 
 hi Comment      cterm=NONE    ctermfg=White
