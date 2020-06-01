@@ -5,6 +5,7 @@
 hi clear
 set cursorline
 set nu
+set laststatus=2
 let g:colors_name = "vegas"
 
 
