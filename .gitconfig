@@ -1,0 +1,13 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Raul
+	email = raulrufino0@gmail.com
+[core]
+	editor = vi
+[credential]
+	helper = store
+[alias]
+	LOG = log --all --graph
+    pushd = !current_branch=`git status | head -n 1 | awk '{print $3}'` \
+&& remote_name=`git remote` \
+&& git push $remote_name $current_branch:$current_branch
