@@ -8,6 +8,8 @@
 	helper = store
 [alias]
 	LOG = log --all --graph
-    pushd = !current_branch=`git status | head -n 1 | awk '{print $3}'` \
+	pushd = ! \
+current_branch=`git status | head -n 1 | awk '{print $3}'` \
 && remote_name=`git remote` \
-&& git push $remote_name $current_branch:$current_branch
+&& git push $remote_name $current_branch:$current_branch \
+# The above command discover the remote branch from local branch
