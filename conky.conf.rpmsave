@@ -1,0 +1,59 @@
+background yes 
+double_buffer yes
+alignment top_right
+net_avg_samples 2
+cpu_avg_samples 2
+draw_shades no
+draw_graph_borders yes
+gap_x -20
+gap_y 30
+no_buffers yes
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 0 
+update_interval 2.0
+use_xft yes
+xftfont Source Code Pro:size=12
+default_color red 
+color1 red
+#color2 green
+# color2 pink
+#color2 ff00c0
+color2 green
+#color3 pid color
+color3 white
+# text cpu and ram process
+
+
+TEXT
+${Color3}
+${image ~/.local/share/icons/redhat.png -s 250x85} 
+
+${scroll 25 1 $sysname $nodename $kernel $machine redhat interprise linux - fedora 32 - root@raul} 
+${color1} ${cpu cpu0}%  ${color2}${cpubar cpu0 12,190} 
+${cpugraph cpu0 80,250 ff00c0 ff0000}${voffset -20}
+${cpugraph cpu1 80,125 ff0000 ff00c0}${cpugraph cpu2 80,125 ff0000 ff00c0}${voffset -20}
+${font ubuntu:size=12}${voffset -70}${color1}${goto 10}1 ${goto 160}2
+${font ubuntu:size=8}${voffset -17}${color1}${goto 90}${freq_g (1)}ghz ${goto 200}${freq_g (2)}ghz
+${voffset 40}${font source code pro:size=12}
+${color1} /  ${fs_used /}/${fs_size /}
+${color2}${fs_bar 12,250 /}
+${color1} /home  ${fs_used /home}/${fs_size /home}
+${color2}${fs_bar 12,250 /home}
+${voffset 30}_ ${color1}CPU%${color2} _ ${color1}PID${color2} _________
+${top cpu 1}%|$color3}${top pid 1}${color2}|${top name 1}
+${top cpu 2}%|${color3}${top pid 2}${color2}|${top name 2}
+${top cpu 3}%|${color3}${top pid 3}${color2}|${top name 3}
+${top cpu 4}%|${color3}${top pid 4}${color2}|${top name 4}
+${top cpu 5}%|${color3}${top pid 5}${color2}|${top name 5}
+${top cpu 6}%|${color3}${top pid 6}${color2}|${top name 6}
+_ ${color1}RAM%${color2} _ ${color1}PID${color2} _________
+${top mem 1}%|${color3}${top_mem pid 1}${color2}|${top_mem name 1}
+${top mem 2}%|${color3}${top_mem pid 2}${color2}|${top_mem name 2}
+${top mem 3}%|${color3}${top_mem pid 3}${color2}|${top_mem name 3}
+${top mem 4}%|${color3}${top_mem pid 4}${color2}|${top_mem name 4}
+${top mem 5}%|${color3}${top_mem pid 5}${color2}|${top_mem name 5}
+${top mem 6}%|${color3}${top_mem pid 6}${color2}|${top_mem name 6}
+${voffset 10} __ Uptime: ${color1}${uptime}${color2} __
