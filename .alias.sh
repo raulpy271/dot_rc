@@ -9,5 +9,8 @@ alias ls='ls --block-size=M'
 alias pye='. bin/activate'
 alias ocaml='rlwrap ocaml'
 
+PS1="\[\033[01;34m\]\u -> \[\033[00m\]" 
+# prompt: raul -> 
+
 set -o vi
 
