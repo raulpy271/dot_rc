@@ -7,6 +7,7 @@ set cursorline
 set laststatus=2
 set hlsearch! 
 set wrap linebreak
+cnorea remove_number :set relativenumber! | :set nu!
 
 " tabs
 set autoindent
