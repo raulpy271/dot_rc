@@ -1,6 +1,7 @@
 # My terminal alias
 
 alias :q=exit
+alias editor=vim
 alias :q!=poweroff
 alias py=python3
 alias gitlog='git log --all --graph'
@@ -14,3 +15,5 @@ PS1="\[\033[01;34m\]\u -> \[\033[00m\]"
 
 set -o vi
 
+export EDITOR="/bin/vim"
+export VISUAL="/bin/vim"
