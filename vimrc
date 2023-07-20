@@ -7,7 +7,6 @@ set cursorline
 set laststatus=2
 set hlsearch! 
 set wrap linebreak
-cnorea remove_number :set relativenumber! | :set nu!
 
 " tabs
 set autoindent
@@ -33,6 +32,12 @@ cnorea s_pt set spell spelllang=pt_BR
 cnorea nos  set nospell
 nmap <F8> :TagbarToggle<CR>
 nnoremap <F12> :NERDTreeToggle<CR>
+cnorea remove_number :set relativenumber! | :set nu!
+" Open terminal in the left side :lt
+cnoremap lt vertical terminal <CR><c-w>20<
+" Open terminal in the right side :rt
+cnoremap rt vertical terminal <CR><c-w>r<c-w>20<
+
 
 " read config file of in the escopo of a local project
 silent! so! *.vimlocal
