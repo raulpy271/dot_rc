@@ -80,7 +80,6 @@ colorscheme catppuccin-mocha
 
 " PLUGIN: shortcuts
 " search for files using CTRL-O, like vs-code
-nnoremap <c-o> <cmd>Telescope find_files<cr>
 nnoremap <c-o> <cmd>lua require('telescope.builtin').find_files{hidden=true}<cr>
 " search for string using CTRL-P
 nnoremap <c-p> <cmd>Telescope live_grep<cr>
