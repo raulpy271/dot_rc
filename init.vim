@@ -33,9 +33,6 @@ Plug 'nvim-tree/nvim-tree.lua'
 " PLUGIN: lualine
 Plug 'nvim-lualine/lualine.nvim'
 
-" PLUGIN: deoplate
-Plug 'shougo/deoplete.nvim'
-
 " PLUGIN: gitsigns
 Plug 'lewis6991/gitsigns.nvim'
 
@@ -45,6 +42,14 @@ Plug 'romgrk/barbar.nvim', {'tag': 'v1.6.4'}
 " PLUGIN: catppuccin
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
+" PLUGIN: nvim-lspconfig
+Plug 'neovim/nvim-lspconfig'
+
+" PLUGIN: nvim-cmp
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'lukas-reineke/cmp-rg'
+
 call plug#end()
 
 " Configure nvim-tree
@@ -53,6 +58,7 @@ call plug#end()
 
 " Configure lualine
 :lua require('lualine').setup{options = {theme = 'ayu_dark'}}
+"
 
 " Configure barbar
 :lua require('barbar').setup({ icons = { button = 'x' } })
@@ -69,11 +75,46 @@ require('telescope').setup{defaults = {
 }}
 END
 
+" Add LSP config
+:lua << END
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local lspconfig = require('lspconfig')
+local cmp = require('cmp')
+
+lspconfig.pyright.setup{
+    capabilities = capabilities
+}
+
+
+lspconfig.phan.setup{
+    --cmd = { "phan", "-m", "json", "--no-color", "--no-progress-bar", "--language-server-on-stdin", "-l", "/src/app" },
+    capabilities = capabilities,
+    root_dir = function()
+        return vim.fn.getcwd()
+    end
+}
+
+cmp.setup{
+    snippet = {
+        expand = function(args)
+           vim.snippet.expand(args.body)
+        end,
+    },
+    mapping = cmp.mapping.preset.insert({
+       ['<C-Space>'] = cmp.mapping.complete(),
+       ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
+    sources = {
+       { name = 'nvim_lsp' },
+       { name = 'rg' }
+    }
+}
+
+
+END
+
 " Configure gitsigns
 :lua require('gitsigns').setup()
-
-" Configure deoplete
-let g:deoplete#enable_at_startup = 1
 
 " Configure catppuccin 
 colorscheme catppuccin-mocha
@@ -87,12 +128,12 @@ nnoremap <c-p> <cmd>Telescope live_grep<cr>
 nnoremap <f12> <cmd>Telescope grep_string<cr>
 " override ls to search buffers using telescope
 cnoremap ls<cr> <cmd>Telescope buffers theme=ivy layout_config={height=0.2}<cr>
+" override go local definition to search overall definition
+nnoremap gd <c-]>
+" create "go back" mapping to go to last position before go to mapping
+nnoremap gb <c-t>
 " open/close file tree in right side
 nnoremap <c-f> <cmd>NvimTreeToggle<cr>
-" Don't use arrow keys in deoplate plugin. Instead use tab and shift-tab
-inoremap <expr><tab> pumvisible() ? "\<down>" : "\<tab>"
-inoremap <expr><s-tab> pumvisible() ? "\<up>" : "\<tab>"
 
 " Add a bash terminal in a new tab
 badd term://bash
-
