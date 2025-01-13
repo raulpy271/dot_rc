@@ -22,6 +22,8 @@ lvim.builtin.telescope.defaults.borderchars = { "-", "|", "-", "|", "+", "+", "+
 -- Setting NeoVim Mappings
 --
 -- Go back in tagstack. It comeback to when the cursor was previusly
-lvim.keys.normal_mode["gb"] = "<C-t>"
+lvim.lsp.buffer_mappings.normal_mode['gb'] = {"<cmd>pop<cr>", "Go back in tagstack"}
+lvim.builtin.comment.toggler.block = "<leader>{"
+
 -- CTRL-V in insert paste the clipboard
 vim.api.nvim_set_keymap("i", "<c-v>", '<ESC>"+pa', { noremap = true })
