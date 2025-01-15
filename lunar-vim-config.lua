@@ -25,5 +25,8 @@ lvim.builtin.telescope.defaults.borderchars = { "-", "|", "-", "|", "+", "+", "+
 lvim.lsp.buffer_mappings.normal_mode['gb'] = {"<cmd>pop<cr>", "Go back in tagstack"}
 lvim.builtin.comment.toggler.block = "<leader>{"
 
+-- Quit all
+lvim.builtin.which_key.mappings["q"] = {"<cmd>confirm qa<cr>", "Quit"}
+
 -- CTRL-V in insert paste the clipboard
 vim.api.nvim_set_keymap("i", "<c-v>", '<ESC>"+pa', { noremap = true })
