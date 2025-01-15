@@ -8,7 +8,7 @@
 
 -- Settings the colorscheme from hours
 if tonumber(os.date("%H")) > 18 then
-  lvim.colorscheme = "industry"
+  lvim.colorscheme = "lunaperche"
 else
   lvim.colorscheme = "lunar"
 end
@@ -18,6 +18,7 @@ lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.telescope.defaults.initial_mode = "normal"
 lvim.builtin.telescope.defaults.border = true
 lvim.builtin.telescope.defaults.borderchars = { "-", "|", "-", "|", "+", "+", "+", "+" }
+lvim.builtin.project.patterns = {".git"}
 
 -- Setting NeoVim Mappings
 --
